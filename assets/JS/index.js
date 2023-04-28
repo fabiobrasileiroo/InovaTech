@@ -1,25 +1,27 @@
 const cam = document.getElementById('cam')// pra ter mais performace declarei aqui
 
-/*navigator.mediaDevices.enumerateDevices()
+const startVideo = () => {
+    navigator.mediaDevices.enumerateDevices()
     .then(devices => {
-        if (Array.isArray(devices)){
+        if (Array.isArray(devices)) {
             devices.forEach(device => {
-                if(device.kind === 'videoinput') {
-                   if(device.label.includes('')){ // se tiver uma câmera internar definir aqui
-                    navigator.getUserMedia(
-                        {video:{
-                            deviceId: devicePixelRatio.deviceId
-                        }},
-                        stream => cam.srcObject = stream, 
-                        error => console.log(error)
+                if (device.kind === 'videoinput') {
+                            {
+                        navigator.getUserMedia(
+                            { video: {
+                                deviceId: device.deviceId
+                            }},
+                            stream => cam.srcObject = stream,
+                            error => console.error(error)
                         )
-                   } 
+                    }
                 }
             })
         }
     })
-*/
-const startVideo = () => {
+}
+
+/*const startVideo = () => {
     navigator.getUserMedia(
         {video:{
         deviceId: devicePixelRatio.deviceId
@@ -28,7 +30,7 @@ const startVideo = () => {
         error => console.log(error) // ser não tiver vai ter erro
     )
 }
-
+*/
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('/assets/lib/face-api/models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('/assets/lib/face-api/models'),
@@ -46,13 +48,10 @@ cam.addEventListener('play', async () => {
     }
     faceapi.matchDimensions(canvas, canvasSize)
     document.body.appendChild(canvas)
-    setInverval(async () => {
-        const detections = await faceapi
-        .detectAllFaces(
-            cam,
-            new faceapi.tinyFaceDetectorOptions()
+    setInterval(async () => {
+       const detections = await faceapi
+       .detectAllFaces(cam, new faceapi.TinyFaceDetectorOptions()
         )
-    const resizeResultsDEtections = faceapi.resizeResults(detections, canvasSize)
     console.log(detections)
     }, 100)
 })
