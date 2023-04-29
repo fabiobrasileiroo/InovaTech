@@ -50,8 +50,11 @@ cam.addEventListener('play', async () => {
     document.body.appendChild(canvas)
     setInterval(async () => {
        const detections = await faceapi
-       .detectAllFaces(cam, new faceapi.TinyFaceDetectorOptions()
+       .detectAllFaces(
+        cam,
+         new faceapi.TinyFaceDetectorOptions()
         )
+    const resizedREsults = faceapi.rezizeResults(detections, canvasSize)
     console.log(detections)
     }, 100)
 })
