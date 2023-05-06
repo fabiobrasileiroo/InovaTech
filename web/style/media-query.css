@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 768px) {
+    span#burguer {
+        display: none;
+    }
+
+menu {
+    display: block;
+}
+menu > ul > li {
+    display: inline-block;
+    margin-right: 3px;
+}
+
+main article{
+    width: 768px;
+}
+}
+@media screen and (max-width: 768px) {
+    header a:hover{
+    background-color: #9bd1f22c;
+    border-radius: 0px;
+}
+    .action_btn {
+    background-color: #025E73;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.action_btn:hover {
+    scale: 1.01;
+    color: #fff;
+    background-color: #025E73;
+    border-radius: 30px;
+}
+
+.action_btn:active {
+    scale: 0.95;
+
+}
+}

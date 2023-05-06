@@ -1,22 +1,24 @@
-import cv2
+import cv2 # importar o opencv -> para instalar rode pip install opencv-python
 
-# Carrega o classificador de cascata de Haar para detecção de faces
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+webcam = cv2.VideoCapture(0) # para conectar o python com a nossa webcam.
 
-# Carrega a imagem
-img = cv2.imread('imagem.jpg')
+reconhecimento_rosto = mp.solutions.face_detection # ativando a solução de reconhecimento de rosto
+desenho = mp.solutions.drawing_utils # ativando a solução de desenho
+reconhecedor_rosto = reconhecimento_rosto.FaceDetection() # criando o item que consegue ler uma imagem e reconhecer os rostos ali dentro
 
-# Converte a imagem para escala de cinza
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-# Detecta as faces na imagem
-faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
-
-# Desenha retângulos ao redor das faces detectadas
-for (x, y, w, h) in faces:
-    cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
-
-# Exibe a imagem com as faces detectadas
-cv2.imshow('Imagem com faces detectadas', img)
-cv2.waitKey(0)
-cv2.destroyAllWindows() 
+while webcam.isOpened():
+    validacao, frame = webcam.read() # lê a imagem da webcam
+    if not validacao:
+        break
+    imagem = frame
+    lista_rostos = reconhecedor_rosto.process(imagem) # usa o reconhecedor para criar uma lista com os rostos reconhecidos
+    
+    if lista_rostos.detections: # caso algum rosto tenha sido reconhecido
+        for rosto in lista_rostos.detections: # para cada rosto que foi reconhecido
+            desenho.draw_detection(imagem, rosto) # desenha o rosto na imagem
+    
+    cv2.imshow("Rostos na sua webcam", imagem) # mostra a imagem da webcam para a gente
+    if cv2.waitKey(5) == 27: # ESC # garante que o código vai ser pausado ao apertar ESC (código 27) e que o código vai esperar 5 milisegundos a cada leitura da webcam
+        break
+webcam.release() # encerra a conexão com a webcam
+cv2.destroyAllWindows() # fecha a janela que mostra o que a webcam está vendo
