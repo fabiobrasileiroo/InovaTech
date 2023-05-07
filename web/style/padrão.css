@@ -105,7 +105,7 @@ header a:hover{
 /* Artigo */
 .home {
     width: 95%;
-    height: 69vh;
+/*    height: 69vh;*/
     display: flex;
     align-items:center;
     justify-content: space-between;
@@ -138,7 +138,6 @@ header a:hover{
     text-decoration: none;
     transition: all 0.5s;
 }
-
 .home-btn:hover {
     background-color: #4E55D9;
 }
@@ -174,4 +173,5 @@ header a:hover{
 .home-img {
     width: 100%;
 }
+
 }
