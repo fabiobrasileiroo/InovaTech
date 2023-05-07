@@ -19,7 +19,6 @@ main article{
 }
 @media screen and (max-width: 768px) {
     header a:hover{
-    background-color: #9bd1f22c;
     border-radius: 0px;
 }
     .action_btn {

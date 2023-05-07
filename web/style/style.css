@@ -6,6 +6,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+:root {
+    --1: #171539;
+}
+
 body {
     height: 100vh;
     background-color: #171539;
