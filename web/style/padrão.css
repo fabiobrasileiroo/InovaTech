@@ -244,13 +244,16 @@ footer {
 }
 
 #facebook {
-    background-color: #4267b3;
+    background-color: #242121;
 }
 
 #whatsapp {
     background-color: #25d366;
 }
 
+.logo-footer {
+    margin-bottom: 10px ;
+}
 .footer-list {
     display: flex;
     flex-direction: column;
