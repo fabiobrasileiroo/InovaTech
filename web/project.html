@@ -16,9 +16,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet"> 
     <link rel="shortcut icon" href="style/gallery/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: white;
+        }
+        .img-responsive {
+            width: 50%;    
+            text-align: center;
+        }
+    </style>
     <title>Projeto</title>
 </head>
-<body onresize="mudouTamanho()">
+<body onresize="mudouTamanho()" >
     <header>
         <h1 id="title"> <a href="#" class="aTitle"><span class="titleDeCor">F</span>ace<span class="titleDeCor">G</span>uardian</a> </h1>
         <span id="burguer" class="material-icons" onclick="clickMenu()">menu </span>  
@@ -36,8 +45,8 @@
     <p>Para realizar o reconhecimento facial usamos Python, e também a biblioteca FaceCV, que é uma extensão da OpenCV (Open Source Computer Vision Library).
 
 O FaceCV fornece diversas funções para detecção e reconhecimento facial, incluindo a detecção de rostos em imagens e vídeos, extração de características faciais, treinamento de modelos de reconhecimento facial e comparação de imagens para identificação de pessoas.</p>
-    <img src="https://embarcados.com.br/wp-content/uploads/2016/12/vis%C3%A3o-computacional-com-opencv-destaque.jpg.webp" alt="Opencv">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/800px-Python-logo-notext.svg.png" alt="python">
+        <img class="img-responsive" src="style/gallery/pngwing.com.png" alt="">
+        <img src="style/gallery/OpenCV-01.jpg" alt="">
     <h2>Porque python e não qualquer outra linguagem?</h2>
     <h3>5 motivos para utilizala</h3>
     <ul>
