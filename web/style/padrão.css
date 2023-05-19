@@ -15,7 +15,7 @@ header {
 .aTitle {
     background-color: white;
     color:black;
-    font-family: 'Times New Roman';
+    font-family: monospace,Arial, Helvetica, sans-serif;
 }
 .titleDeCor {
     color: #685ca8;
@@ -81,6 +81,7 @@ header a:hover{
 }
 
 .action_btn {
+    margin-right: 5px;
     background-color: #025E73;
     color: #fff;
     padding: 0.5rem 1rem;
