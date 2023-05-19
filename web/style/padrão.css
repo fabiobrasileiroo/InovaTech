@@ -4,6 +4,9 @@
     margin: 0px;
     padding: 0px;
 }
+body {
+    background-color: #0A0A0A;
+}
 html {
     height: 100vh;
 }
@@ -127,9 +130,11 @@ header a:hover{
     font-size: 4rem;
     margin-bottom: 1rem;
     line-height: 4rem;
+    color: white;
 }
 .text-p {
     margin-bottom: 25px;
+    color: white;
 }
 .home-btn {
     padding: 15px 45px;
@@ -149,13 +154,12 @@ header a:hover{
 
 @media (max-width: 768px) {
     
-
 .home {
     padding: 100px 2%;
     flex-direction: column;
     text-align: center;
     overflow: hidden;
-    gap: 5rem
+    gap: 5rem;
 }
 
 
