@@ -1,24 +1,20 @@
-import cv2 # importar o opencv -> para instalar rode pip install opencv-python
+import cv2
 
-webcam = cv2.VideoCapture(0) # para conectar o python com a nossa webcam.
+# Captura vídeo da webcam
+cap = cv2.VideoCapture(0)
 
-reconhecimento_rosto = mp.solutions.face_detection # ativando a solução de reconhecimento de rosto
-desenho = mp.solutions.drawing_utils # ativando a solução de desenho
-reconhecedor_rosto = reconhecimento_rosto.FaceDetection() # criando o item que consegue ler uma imagem e reconhecer os rostos ali dentro
+# Loop para exibir o vídeo em tempo real
+while True:
+    # Lê um frame do vídeo
+    ret, frame = cap.read()
 
-while webcam.isOpened():
-    validacao, frame = webcam.read() # lê a imagem da webcam
-    if not validacao:
+    # Exibe o frame em uma janela
+    cv2.imshow('Video', frame)
+
+    # Verifica se o usuário pressionou a tecla 'q'
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-    imagem = frame
-    lista_rostos = reconhecedor_rosto.process(imagem) # usa o reconhecedor para criar uma lista com os rostos reconhecidos
-    
-    if lista_rostos.detections: # caso algum rosto tenha sido reconhecido
-        for rosto in lista_rostos.detections: # para cada rosto que foi reconhecido
-            desenho.draw_detection(imagem, rosto) # desenha o rosto na imagem
-    
-    cv2.imshow("Rostos na sua webcam", imagem) # mostra a imagem da webcam para a gente
-    if cv2.waitKey(5) == 27: # ESC # garante que o código vai ser pausado ao apertar ESC (código 27) e que o código vai esperar 5 milisegundos a cada leitura da webcam
-        break
-webcam.release() # encerra a conexão com a webcam
-cv2.destroyAllWindows() # fecha a janela que mostra o que a webcam está vendo
+
+# Libera a webcam e destrói a janela
+cap.release()
+cv2.destroyAllWindows()

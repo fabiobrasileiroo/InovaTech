@@ -16,6 +16,14 @@ menu > ul > li {
 main article{
     width: 768px;
 }
+section {
+    /*margin-bottom: 83px;*/
+    margin-bottom: 8.4vh;
+
+}
+.home {
+    height: 80vh;
+}
 }
 @media screen and (max-width: 768px) {
     header a:hover{
@@ -49,4 +57,5 @@ main article{
     scale: 0.95;
 
 }
+
 }
