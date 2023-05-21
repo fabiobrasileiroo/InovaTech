@@ -16,7 +16,7 @@ window.onload = function () {
         display = document.querySelector('#timer'); // selecionando o timer
     startTimer(duration, display); // iniciando o timer
 };*/
-var deadline = new Date("May 26, 2023 12:00:00").getTime();
+var deadline = new Date("May 25, 2023 08:00:00").getTime();
 var x = setInterval(function() {
 var now = new Date().getTime();
 var t = deadline - now;
