@@ -1,9 +1,10 @@
-<link rel="shortcut icon" href="insira_aqui_o_caminho" type="image/x-icon" /><DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="pt-br">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reconhecimento Facial</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style/padrão.css">
     <link rel="stylesheet" href="style/media-query.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +16,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet"> 
 <link rel="shortcut icon" href="style/gallery/favicon.ico" type="image/x-icon">
+    <script src="conometro.js" defer></script>
+    <style>
+    
+
+    .conometro-h1 {
+        color: white;
+    }
+    #demo {
+        text-align: center;
+        font-size: 60px;
+        color: white;
+    }
+    main {
+        height: 75vh;
+    }
+    .conometro-div {
+        background-color:#4E55D9;
+        width: 75vw;
+        margin-left: 50px;
+        text-align: center;
+    }
+    </style>
 </head>
 <body onresize="mudouTamanho()">
-    <header>
+    <main>
+     <header>
         <h1 id="title"> <a href="#" class="aTitle"><span class="titleDeCor">F</span>ace<span class="titleDeCor">G</span>uardian</a> <img src="style/gallery/reconhecimento-facial (2).png" alt=""></h1>
         
         <span id="burguer" class="material-icons" onclick="clickMenu()">menu </span>  
@@ -26,33 +50,13 @@
             <li><a href="#">&nbsp;Home</a>
             <li><a href="project.html">Projeto</a>
             <li><a href="#">Seguraça </a>
-            <li><a href="conometro.html" class="action_btn">Reconhecimento Facial teste | Em breve</a>
+            <li><a href="../index.html" class="action_btn">Reconhecimento Facial teste | Em breve</a>
             </ul>
     </header>
-    <main>
-        <section class="home">
-            <div class="home-text">
-            <h4 class="text-h4">Bem-vindo ao FaceGuardian</h4>
-            <h1 class="text-h1"> Quem somos nós?</h1>
-            <p class="text-p">Um grupo de estudantes da faculdade da Fametro, que visa melhora as catracas das faculdades, escolas e locais de trabalho, com o intuito de trazer segurança, facilidade para empresas.</p>
-            <a href="project.html" class="home-btn">Saiba mais</a>
-            </div>
-            <div class="home-img">
-                <img src="style/gallery/face-mm.jpg" alt="reconhecimento">
-            </div>
-<!-- <p>O reconhecimento facil é uma tecnologia que utiliza algoritmos de integência artificial para analizar e indentifica caracteristicas facias únicas de uma pesssoa. Essa tecnologia é cada vez mais utilizada em diversas áreas como seguraça, marketing, saúde, entre outras para fins como:
-                Segurança, fácil acesso, varejo, saúde entrenimento, identificação pessoal entre outros.
-            </p> 
-            <h3>O porque ele falha?</h3>
-            <p>Toda tecnologia tem brechas a ser exploradas a ideia e simples para minimizar isso usar um processo de duas etapas de seguraça por exemplo:
-                Biometrica e Recohecimento Facil
-            Poderiamos ate inserir um 3 como token que ficar gerando senha a cada 30s. Mas para isso devemos primeiro pensa na enficiencia da e se pergurta ela rapida. Ninguem estar afim fazer 3 processos e ser lento então tem tamos deixar ele instantanio, mas como você se perguntar?
-            </p>
-            <h3>Mais igualde</h3>
-            <p>Nem todos tem celular, devemos ter seguraça pra todos entao a melhor escoljar é</p>
-        --> 
-        </section>
-      <footer>
+    <h1 class="conometro-h1">Faltam para o InovaTech</h1>
+    <div class="conometro-div"><p id="demo"></p></div>
+    </main>
+     <footer>
         <div id="footer_content">
             <div id="footer_contacts">
                 <img class="logo-footer"src="style/gallery/logo-InovaTech.jpg" alt="">
@@ -126,8 +130,7 @@
         </div>
     </footer>      
     
-    <main>
-    <script src="myscript.js">
+     <script src="myscript.js">
     </script>
 </body>
 </html>
