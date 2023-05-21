@@ -22,6 +22,7 @@ header {
 }
 .titleDeCor {
     color: #685ca8;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .aTitle:hover {
     color: #4E55D9;
