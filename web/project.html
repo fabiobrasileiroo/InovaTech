@@ -16,37 +16,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet"> 
     <link rel="shortcut icon" href="style/gallery/favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            background-color: white;
-        }
-        .img-responsive {
-            width: 50%;    
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="styleProject.css">
     <title>Projeto</title>
 </head>
 <body onresize="mudouTamanho()" >
     <header>
-        <h1 id="title"> <a href="#" class="aTitle"><span class="titleDeCor">F</span>ace<span class="titleDeCor">G</span>uardian</a> </h1>
+        <h1 id="title"> <a href="#" class="aTitle"><span class="titleDeCor">F</span>ace<span class="titleDeCor">G</span>uardian</a> <img src="style/gallery/reconhecimento-facial (2).png" alt=""> </h1>
         <span id="burguer" class="material-icons" onclick="clickMenu()">menu </span>  
         <menu id="itens">
             <ul>
             <li><a href="#">&nbsp;Home</a>
-            <li><a href="project.html">Projeto</a>
+            <li><a href="prokject.html">Projeto</a>
             <li><a href="#">Seguraça </a>
             <li><a href="../index.html" class="action_btn">Reconhecimento Facial teste | Em breve</a>
             </ul>
     </header>
+    <main>
+        <section class="project">
     <h1>O que reconhecimento facial?</h1>
     <p>O reconhecimento facial é uma técnica de visão computacional que permite identificar pessoas em imagens ou vídeos através da análise das características únicas de seus rostos. </p>
     <h2>Tecnologias que utilizamos</h2>
-    <p>Para realizar o reconhecimento facial usamos Python, e também a biblioteca FaceCV, que é uma extensão da OpenCV (Open Source Computer Vision Library).
+    <p>Para realizar o reconhecimento facial usamos Python, e também a biblioteca FaceCV, que é uma extensão da OpenCV (Open Source Computer Vision Library) e a Dlib.
 
-O FaceCV fornece diversas funções para detecção e reconhecimento facial, incluindo a detecção de rostos em imagens e vídeos, extração de características faciais, treinamento de modelos de reconhecimento facial e comparação de imagens para identificação de pessoas.</p>
-        <img class="img-responsive" src="style/gallery/pngwing.com.png" alt="">
-        <img src="style/gallery/OpenCV-01.jpg" alt="">
+O FaceCV e a dlib fornece diversas funções para detecção e reconhecimento facial, incluindo a detecção de rostos em imagens e vídeos, extração de características faciais, treinamento de modelos de reconhecimento facial e comparação de imagens para identificação de pessoas.</p>
+        <div class="row">
+        <div class="coluna"><img class="img-responsive" src="style/gallery/pngwing.com.png" alt=""></div>
+        <div class="coluna"><img class="img-responsive"src="style/gallery/OpenCV-01.jpg" alt=""></div>
+        <div><img class="dlib" src="style/gallery/dlib-logo.png" alt=""></div>
+        </div>
     <h2>Porque python e não qualquer outra linguagem?</h2>
     <h3>5 motivos para utilizala</h3>
     <ul>
@@ -55,6 +52,8 @@ O FaceCV fornece diversas funções para detecção e reconhecimento facial, inc
         <li>Compatibilidade multiplataforma: Python é uma linguagem multiplataforma, o que significa que os programas escritos em Python podem ser executados em diferentes sistemas operacionais, como Windows, Linux e MacOS. Isso é particularmente importante para projetos de reconhecimento facial que podem ser executados em diferentes dispositivos e plataformas.</li>
         <li>Aprendizado de Máquina: A linguagem Python é muito utilizada em projetos de Aprendizado de Máquina, que é uma técnica frequentemente usada em projetos de reconhecimento facial. Bibliotecas como o TensorFlow e o Keras tornam a construção de modelos de Aprendizado de Máquina mais fácil e acessível.</li>
     </ul>
+    </main>
+        </section>
         <footer>
         <div id="footer_content">
             <div id="footer_contacts">
