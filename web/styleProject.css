@@ -1,9 +1,18 @@
 @charset "UTF-8";
-body {
-
-}
 h1, h2, h3, h4, p,li {
     color: white;
+}
+.project-h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1px;
+    margin-left: -20px;
+}
+.project-h2 {
+    margin-left: -20px;
+}
+p {
+    margin-left: -5px;
 }
 .img-responsive {
     width: 25vw;    
@@ -37,4 +46,19 @@ h1, h2, h3, h4, p,li {
 .project {
     margin: 0 auto;
     width: 80%;
+}
+@media screen and (min-width: 768px) {
+    .project0 {
+        width: 50vw;    
+    }
+    .img-responsive {
+    width: 15vw;    
+    margin-left: 10vw;
+    background-color: #fff;
+    padding: 5px;
+    padding-left: 40px;
+    padding-right:70px;
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom:0px ;
+    }
 }
