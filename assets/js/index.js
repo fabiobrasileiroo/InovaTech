@@ -23,10 +23,10 @@ navigator.mediaDevices.enumerateDevices()
 }
 
 const loadLabels = () => {
-    const labels = ['Fabio Brasileiro']
+    const labels = ['Fabio Brasileiro','Josefa']
     return Promise.all(labels.map(async label => {
         const descriptions = []
-        for (let i = 1; i <= 5; i++) {
+        for (let i = 1; i <= 1 ; i++) {
             const img = await faceapi.fetchImage(`/assets/lib/face-api/labels/${label}/${i}.jpg`)
             const detections = await faceapi
                 .detectSingleFace(img)
@@ -38,22 +38,6 @@ const loadLabels = () => {
     }))
 }
 //
-/*const loadLabels2 = () => {
-    const labels = ['Josefa']
-    return Promise.all(labels.map(async label => {
-        const descriptions = []
-        for (let i = 1; i <= 5; i++) {
-            const img = await faceapi.fetchImage(`/assets/lib/face-api/labels/${label}/${i}.jpg`)
-            const detections = await faceapi
-                .detectSingleFace(img)
-                .withFaceLandmarks()
-                .withFaceDescriptor()
-            descriptions.push(detections.descriptor)
-        }
-        return new faceapi.LabeledFaceDescriptors(label, descriptions)
-    }))
-}*/
-
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('/assets/lib/face-api/models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('/assets/lib/face-api/models'),
@@ -69,7 +53,7 @@ cam.addEventListener('play', async () =>{
         width: cam.width,
         height: cam.height
     }
-    const labels = await loadLabels()//,  loadLabels2()
+    const labels = await loadLabels()
     faceapi.matchDimensions(canvas, canvasSize)
     document.body.appendChild(canvas)
     setInterval(async () => {

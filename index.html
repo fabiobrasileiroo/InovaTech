@@ -1,43 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video | Reconhecimento Facial com FaceApi </title>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection@2.0.0/face-landmarks-detection.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-recognition"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-recognition@0.21.0/face-recognition.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-api"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-api@0.23.0/face-api.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video | Reconhecimento Facial com FaceAPI</title>
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
-    <img id="imagem" src="imagem.jpg">
-    <script>
-        // Carrega a imagem
-const imagem = document.getElementById('imagem');
-// Cria um canvas para desenhar a imagem
-const canvas = document.createElement('canvas');
-canvas.width = imagem.width;
-canvas.height = imagem.height;
-// Desenha a imagem no canvas
-const ctx = canvas.getContext('2d');
-ctx.drawImage(imagem, 0, 0, canvas.width, canvas.height);
-// Detecta os rostos na imagem
-faceapi.detectAllFaces(canvas).then((faces) => {
-  // Desenha um retângulo ao redor de cada rosto
-  faces.forEach((face) => {
-    const { x, y, width, height } = face.box;
-    ctx.strokeStyle = 'red';
-    ctx.strokeRect(x, y, width, height);
-  });
-  // Exibe a imagem com os retângulos ao redor dos rostos
-  document.body.appendChild(canvas);
-});
-
-    </script>
+    <h1>oi</h1>
+    <video autoplay id="cam"
+    width="720"
+    height="560"
+    muted
+    ></video>
+    <script src="./assets/lib/face-api/face-api.min.js"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
-</html>
