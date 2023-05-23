@@ -1,4 +1,4 @@
-const cam = document.getElementById('cam')// pra ter mais performace declarei aqui
+const cam = document.getElementById('cam') // pra ter mais performace declarei aqui
 
 const startVideo = () => {
     navigator.mediaDevices.enumerateDevices()
