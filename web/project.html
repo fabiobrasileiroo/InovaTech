@@ -18,6 +18,18 @@
     <link rel="shortcut icon" href="style/gallery/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styleProject.css">
     <title>Projeto</title>
+    <style>
+        a {
+        padding: 3px 54px;
+    background: #685ca8 ;
+    color: white;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.5s;
+    margin-top: 50px;
+        }
+    </style>
 </head>
 <body onresize="mudouTamanho()" >
     <header>
@@ -26,8 +38,8 @@
         <menu id="itens">
             <ul>
             <li><a href="web.html">&nbsp;Home</a>
-            <li><a href="project.htmlr">Projeto</a>
-            <li><a href="#">Seguraça </a>
+            <li><a href="project.html">Projeto</a>
+            <li><a href="#"></a>
             <li><a href="conometro.html" class="action_btn">Reconhecimento Facial teste | Em breve</a>
             </ul>
     </header>
@@ -37,24 +49,38 @@
     <h1 class="project-h1">O que reconhecimento facial?</h1>
     <p>O reconhecimento facial é uma técnica de visão computacional que permite identificar pessoas em imagens ou vídeos através da análise das características únicas de seus rostos. </p>
     <h2 class="project-h2">Tecnologias que utilizamos</h2>
-    <p>Para realizar o reconhecimento facial usamos Python, e também a biblioteca FaceCV, que é uma extensão da OpenCV (Open Source Computer Vision Library) e a Dlib.
-
-O FaceCV e a dlib fornece diversas funções para detecção e reconhecimento facial, incluindo a detecção de rostos em imagens e vídeos, extração de características faciais, treinamento de modelos de reconhecimento facial e comparação de imagens para identificação de pessoas.</p>
+    <ul>
+    <li><p><strong>JavaScript:</strong> É a linguagem de programação utilizada para implementar a funcionalidade de reconhecimento facial no navegador. JavaScript é amplamente suportado pelos navegadores modernos e permite a interação com a API do navegador para acessar a webcam, carregar imagens e manipular elementos HTML.</p>
+    <li><p><strong>HTML e CSS:</strong> O HTML é usado para criar a estrutura básica da página web, enquanto o CSS é utilizado para estilizar os elementos da página, como botões, contêineres e imagens.</p>
+    <li><p><strong>Face-API.js:</strong>  É uma biblioteca JavaScript de código aberto que fornece uma API simples e poderosa para realizar o reconhecimento facial. A biblioteca utiliza modelos pré-treinados de aprendizado de máquina para detectar rostos, extrair características faciais e realizar o reconhecimento facial.</p>
+    <li><p><strong>Visão computacional:</strong> É uma disciplina que combina técnicas de processamento de imagem, aprendizado de máquina e outras áreas relacionadas para analisar e interpretar informações visuais. No contexto do reconhecimento facial, a visão computacional é usada para detectar e extrair características faciais importantes dos rostos, como olhos, nariz, boca, etc.</p>
+    <li><p><strong>Aprendizado de máquina: </strong>É uma área da inteligência artificial que se concentra no desenvolvimento de algoritmos e modelos capazes de aprender a partir de dados e tomar decisões ou fazer previsões com base nesse aprendizado. No caso do reconhecimento facial, os modelos pré-treinados são treinados em grandes conjuntos de dados contendo imagens faciais para aprender padrões e características comuns associadas a diferentes indivíduos.</p>
+    <li><p><strong>Redes neurais convolucionais (CNN):</strong> São um tipo de arquitetura de rede neural frequentemente usada em tarefas de processamento de imagem. As CNNs são especialmente adequadas para reconhecimento facial, pois podem aprender padrões hierárquicos e representações significativas de imagens. A Face-API.js utiliza uma CNN para a detecção de rostos e extração de características faciais.</p>
+    </ul>
+       
+      <a href="https://justadudewhohacks.github.io/face-api.js/docs/index.html" target="_blank">Mais sobre</a>
         </section>
         <div class="row">
-        <div class="coluna"><img class="img-responsive" src="style/gallery/pngwing.com.png" alt=""></div>
-        <div class="coluna"><img class="img-responsive"src="style/gallery/OpenCV-01.jpg" alt=""></div>
-        <div><img class="dlib" src="style/gallery/dlib-logo.png" alt=""></div>
+            <div class="coluna">
+                <img class="img-responsive" src="style/gallery/pngwing.com(1).png" alt="">
+            </div>
+            <div class="coluna" >
+                <img class="img-responsive2" src="style/gallery/pngwing.com(2).png" alt="">
+            </div>
         </div>
+        </div>
+        <div><img class="dlib" src="https://user-images.githubusercontent.com/31125521/57297377-bfcdfd80-70cf-11e9-8afa-2044cb167bff.gif" alt=""></div>
+        <div><img class="dlib" src="https://user-images.githubusercontent.com/31125521/57224752-ad3dc080-700a-11e9-85b9-1357b9f9bca4.gif" alt=""></div>
         <section class="project0">
-    <h2>Porque python e não qualquer outra linguagem?</h2>
-    <h3>5 motivos para utilizala</h3>
+      
+    <h2>Processor da Bibleoteca:</h2>
+    <h3>  - Face-api.js escrito em typescript</h3>
     <ul>
-        <li >Simplicidade e facilidade de uso: Python é uma linguagem de programação que tem uma sintaxe clara e concisa, o que torna fácil para os desenvolvedores escreverem e entenderem o código. Além disso, a vasta gama de bibliotecas e frameworks disponíveis na linguagem, como a OpenCV e a FaceCV, permitem uma rápida prototipação de projetos de reconhecimento facial.</li>
-        <li>Bibliotecas de Visão Computacional: Python tem uma grande variedade de bibliotecas de visão computacional disponíveis, incluindo OpenCV, Dlib, TensorFlow, Keras, entre outras. Essas bibliotecas são fáceis de usar, bem documentadas e têm uma comunidade ativa que fornece suporte e ajuda para os desenvolvedores.</li>
-        <li>Compatibilidade multiplataforma: Python é uma linguagem multiplataforma, o que significa que os programas escritos em Python podem ser executados em diferentes sistemas operacionais, como Windows, Linux e MacOS. Isso é particularmente importante para projetos de reconhecimento facial que podem ser executados em diferentes dispositivos e plataformas.</li>
-        <li>Aprendizado de Máquina: A linguagem Python é muito utilizada em projetos de Aprendizado de Máquina, que é uma técnica frequentemente usada em projetos de reconhecimento facial. Bibliotecas como o TensorFlow e o Keras tornam a construção de modelos de Aprendizado de Máquina mais fácil e acessível.</li>
-    </ul>
+        <li ><strong>Detecção de rostos</strong>O primeiro passo é detectar a presença de rostos em uma imagem ou quadro de vídeo. A detecção de rostos é realizada usando uma rede neural convolucional (CNN) pré-treinada. A rede analisa a imagem em busca de regiões que possam conter rostos, aplicando filtros e detectando padrões visuais característicos.
+        <li><strong>Extração de características faciais:</strong>Após a detecção de rostos, o próximo passo é extrair as características faciais dos rostos detectados. Isso envolve a localização de pontos-chave na face, como os olhos, nariz, boca, etc. A Face-API.js utiliza um modelo pré-treinado chamado "FaceLandmark68Net" para realizar essa tarefa. O modelo mapeia os pontos-chave em relação a uma face de referência.
+        <li><strong>Codificação facial:</strong>Em seguida, é gerada uma codificação numérica única para cada rosto detectado. Essa codificação é uma representação vetorial das características faciais extraídas e é usada para comparar e reconhecer rostos. A Face-API.js utiliza um modelo pré-treinado chamado "FaceRecognitionNet" para realizar essa etapa. 
+        <li><strong>Reconhecimento facial:</strong>Uma vez que as codificações faciais tenham sido geradas para um conjunto de rostos de referência, é possível realizar o reconhecimento facial comparando as codificações dos rostos detectados com as codificações de referência. A biblioteca oferece métodos para calcular a similaridade entre as codificações faciais e identificar possíveis correspondências.
+        <p> É importante notar que a Face-API.js é alimentada por modelos de aprendizado de máquina pré-treinados, que foram treinados em grandes conjuntos de dados contendo rostos de diferentes pessoas. Esses modelos aprenderam a detectar rostos, extrair características faciais e realizar reconhecimento facial com base nos padrões encontrados nos </p>    
 </section>
     </main>
         </section>

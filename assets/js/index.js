@@ -7,7 +7,7 @@ navigator.mediaDevices.enumerateDevices()
         if(Array.isArray(devices)){
             devices.forEach(device => {
                 if(device.kind === 'videoinput'){
-                    if(device.label.includes('')){//ATIV VGA Camera
+                    if(device.label.includes('DEMO1')){//ATIV VGA Camera
                         navigator.getUserMedia(
                             { video: {
                                 deviceId: device.deviceId

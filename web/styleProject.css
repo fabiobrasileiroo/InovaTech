@@ -1,6 +1,6 @@
 @charset "UTF-8";
-h1, h2, h3, h4, p,li {
-    color: white;
+body {
+    background-color: white;
 }
 .project-h1 {
     font-size: 1.8rem;
@@ -9,56 +9,61 @@ h1, h2, h3, h4, p,li {
     margin-left: -20px;
 }
 .project-h2 {
-    margin-left: -20px;
+    margin-left: -15px;
+
+}
+.project0 {
+    margin: auto;
+}
+.project0 > ul > li >  p {
+    margin-top: 10px;
+    margin-bottom: 10px;;
+}
+strong {
+    color: #4E55D9;
+    text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.2);
 }
 p {
     margin-left: -5px;
 }
+
 .img-responsive {
-    width: 25vw;    
-    margin-left: 10vw;
-    background-color: #fff;
-    padding: 5px;
-    padding-right: 25px;
-    border-radius: 10px 10px 0px 0px;
-    margin-bottom:0px ;
+    margin: auto;
+    width: 50vw;    
 }
-.coluna {
-    float: left;
-    width: 33.33%;
-    margin-bottom:0px ;
-}
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-    margin-bottom:0px ;
+.img-responsive2 {
+    margin-left:20vw ;
+    width: 30vw;    
 }
 .dlib {
+    margin: auto;
     width: 70vw; 
-    background-color: #fff;
-    border-radius: 10px;
-    margin-top: -5px;
-    padding-top: 10px ;
+    border-radius: 20px;
     padding-right: 5px;
-    padding-left: 5pG ;
+    padding-left: 5px ;
 }
 .project {
     margin: 0 auto;
     width: 80%;
 }
+
 @media screen and (min-width: 768px) {
     .project0 {
-        width: 50vw;    
+        width: 720px;    
     }
     .img-responsive {
-    width: 15vw;    
-    margin-left: 10vw;
-    background-color: #fff;
-    padding: 5px;
-    padding-left: 40px;
-    padding-right:70px;
-    border-radius: 10px 10px 0px 0px;
-    margin-bottom:0px ;
-    }
+    width: 450px;    
+    display: block;
+    margin: 0 auto;    
+}
+.dlib {
+    width: 650px; 
+    display: block;
+    margin: 0px auto;
+}
+.img-responsive2 {
+    display: block;
+    margin: 0 auto;
+    width: 250px;    
+}
 }
