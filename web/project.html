@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="styleProject.css">
     <title>Projeto</title>
     <style>
-        a {
+        .sobre {
         padding: 3px 54px;
     background: #685ca8 ;
     color: white;
@@ -28,6 +28,9 @@
     text-decoration: none;
     transition: all 0.5s;
     margin-top: 50px;
+        }
+        .sobre:hover {
+             background-color: #4E55D9;
         }
     </style>
 </head>
@@ -58,7 +61,7 @@
     <li><p><strong>Redes neurais convolucionais (CNN):</strong> São um tipo de arquitetura de rede neural frequentemente usada em tarefas de processamento de imagem. As CNNs são especialmente adequadas para reconhecimento facial, pois podem aprender padrões hierárquicos e representações significativas de imagens. A Face-API.js utiliza uma CNN para a detecção de rostos e extração de características faciais.</p>
     </ul>
        
-      <a href="https://justadudewhohacks.github.io/face-api.js/docs/index.html" target="_blank">Mais sobre</a>
+      <a class='sobre'href="https://justadudewhohacks.github.io/face-api.js/docs/index.html" target="_blank">Mais sobre</a>
         </section>
         <div class="row">
             <div class="coluna">
@@ -80,7 +83,7 @@
         <li><strong>Extração de características faciais:</strong>Após a detecção de rostos, o próximo passo é extrair as características faciais dos rostos detectados. Isso envolve a localização de pontos-chave na face, como os olhos, nariz, boca, etc. A Face-API.js utiliza um modelo pré-treinado chamado "FaceLandmark68Net" para realizar essa tarefa. O modelo mapeia os pontos-chave em relação a uma face de referência.
         <li><strong>Codificação facial:</strong>Em seguida, é gerada uma codificação numérica única para cada rosto detectado. Essa codificação é uma representação vetorial das características faciais extraídas e é usada para comparar e reconhecer rostos. A Face-API.js utiliza um modelo pré-treinado chamado "FaceRecognitionNet" para realizar essa etapa. 
         <li><strong>Reconhecimento facial:</strong>Uma vez que as codificações faciais tenham sido geradas para um conjunto de rostos de referência, é possível realizar o reconhecimento facial comparando as codificações dos rostos detectados com as codificações de referência. A biblioteca oferece métodos para calcular a similaridade entre as codificações faciais e identificar possíveis correspondências.
-        <p> É importante notar que a Face-API.js é alimentada por modelos de aprendizado de máquina pré-treinados, que foram treinados em grandes conjuntos de dados contendo rostos de diferentes pessoas. Esses modelos aprenderam a detectar rostos, extrair características faciais e realizar reconhecimento facial com base nos padrões encontrados nos </p>    
+        <p> É importante notar que a Face-API.js é alimentada por modelos de aprendizado de máquina pré-treinados, que foram treinados em grandes conjuntos de dados contendo rostos de diferentes pessoas. Esses modelos aprenderam a detectar rostos, extrair características faciais e realizar reconhecimento facial com base nos padrões encontrados nos nos dados de treinamento.</p>    
 </section>
     </main>
         </section>
