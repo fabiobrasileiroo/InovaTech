@@ -23,7 +23,7 @@ navigator.mediaDevices.enumerateDevices()
 }
 
 const loadLabels = () => {
-    const labels = ['Fabio Brasileiro','Josefa']
+    const labels = ['Fabio Brasileiro']
     return Promise.all(labels.map(async label => {
         const descriptions = []
         for (let i = 1; i <= 1 ; i++) {
