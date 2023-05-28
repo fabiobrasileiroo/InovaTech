@@ -1,4 +1,4 @@
-const cam = document.getElementById('cam')//melhora o desempenho no navegador
+const cam = document.getElementById('cam') //melhora o desempenho no navegador
 //navigator.getUserMedia({video: true})
 
 const startVideo = () => {
@@ -7,7 +7,7 @@ navigator.mediaDevices.enumerateDevices()
         if(Array.isArray(devices)){
             devices.forEach(device => {
                 if(device.kind === 'videoinput'){
-                    if(device.label.includes('DEMO1')){//ATIV VGA Camera
+                    if(device.label.includes('')){//ATIV VGA Camera and DEMO1
                         navigator.getUserMedia(
                             { video: {
                                 deviceId: device.deviceId
@@ -23,7 +23,7 @@ navigator.mediaDevices.enumerateDevices()
 }
 
 const loadLabels = () => {
-    const labels = ['Fabio Brasileiro']
+    const labels = ['Fabio Brasileiro','Josefa','Jordan','Karson','Jhonny','Murilo','Luanna','Fabricio','Jorge','Lucas Minervino','Guilherme', 'Gabriel','Felipe','Richard Belarmino']
     return Promise.all(labels.map(async label => {
         const descriptions = []
         for (let i = 1; i <= 1 ; i++) {

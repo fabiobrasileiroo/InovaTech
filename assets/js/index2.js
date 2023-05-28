@@ -1,0 +1,88 @@
+const cam = document.getElementById('cam');
+const startVideo = async () => {
+  try {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    if (Array.isArray(devices)) {
+      const videoDevices = devices.filter(device => device.kind === 'videoinput');
+      for (const device of videoDevices) {
+        if (device.label.includes('')) { // ATIV VGA Camera and DEMO1
+          const stream = await navigator.mediaDevices.getUserMedia({
+            video: {
+              deviceId: device.deviceId
+            }
+          });
+          cam.srcObject = stream;
+          break;
+        }
+      }
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const loadLabels = async () => {
+  const labels = ['Fabio Brasileiro', 'Josefa', 'Jordan', 'Karson', 'Jhonny', 'Murilo', 'Luanna', 'Fabricio', 'Jorge', 'Lucas Minervino', 'Guilherme', 'Gabriel', 'Felipe', 'Richard Belarmino'];
+  const labelPromises = labels.map(async label => {
+    const descriptions = [];
+    for (let i = 1; i <= 1; i++) {
+      const img = await faceapi.fetchImage(`/assets/lib/face-api/labels/${label}/${i}.jpg`);
+      const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
+      descriptions.push(detections.descriptor);
+    }
+    return new faceapi.LabeledFaceDescriptors(label, descriptions);
+  });
+  return Promise.all(labelPromises);
+};
+
+Promise.all([
+  faceapi.nets.tinyFaceDetector.loadFromUri('/assets/lib/face-api/models'),
+  faceapi.nets.faceLandmark68Net.loadFromUri('/assets/lib/face-api/models'),
+  faceapi.nets.faceRecognitionNet.loadFromUri('/assets/lib/face-api/models'),
+  faceapi.nets.faceExpressionNet.loadFromUri('/assets/lib/face-api/models'),
+  faceapi.nets.ageGenderNet.loadFromUri('/assets/lib/face-api/models'),
+  faceapi.nets.ssdMobilenetv1.loadFromUri('/assets/lib/face-api/models'),
+]).then(startVideo);
+
+cam.addEventListener('play', async () => {
+  const canvas = faceapi.createCanvasFromMedia(cam);
+  const canvasSize = {
+    width: cam.width,
+    height: cam.height
+  };
+  const labels = await loadLabels();
+  faceapi.matchDimensions(canvas, canvasSize);
+  document.body.appendChild(canvas);
+  setInterval(async () => {
+    const detections = await faceapi.detectAllFaces(cam, new faceapi.TinyFaceDetectorOptions())
+      .withFaceLandmarks()
+      .withFaceExpressions()
+      .withAgeAndGender()
+      .withFaceDescriptors();
+
+    const resizedDetections = faceapi.resizeResults(detections, canvasSize);
+    const faceMatcher = new faceapi.FaceMatcher(labels, 0.8);
+    const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor));
+
+    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+    faceapi.draw.drawDetections(canvas, resizedDetections);
+    faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+    faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
+
+    resizedDetections.forEach(detection => {
+      const { age, gender, genderProbability } = detection;
+      new faceapi.draw.DrawTextField([
+        `${parseInt(age, 10)} years`,
+        `${gender} (${parseInt(genderProbability * 100, 10)})`
+      ], detection.detection.box.topRight).draw(canvas);
+    });
+
+    results.forEach((result, index) => {
+      const box = resizedDetections[index].detection.box;
+      const { label, distance } = result;
+      new faceapi.draw.DrawTextField([
+        `${label} (${parseInt(distance * 100, 10)})`
+      ], box.bottomRight).draw(canvas);
+    });
+  }, 100);
+});
