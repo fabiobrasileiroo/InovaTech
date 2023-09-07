@@ -12,3 +12,6 @@ body {
 canvas {
     position: absolute;
 }
+a {
+    color: rgb(97, 33, 157)
+}
